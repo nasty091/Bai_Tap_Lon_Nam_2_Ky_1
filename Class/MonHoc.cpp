@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+// class MonHoc
 class MonHoc{
 	private:
 		string HocPhan,TenHocPhan;
