@@ -68,3 +68,71 @@ void SingleList::Swap(TinChi& source1, TinChi& source2){
 	source1 = source2;
 	source2 = t;
 }
+void SingleList::findMaxDiemTong(){
+	Node* temp = pHead;
+	float max;
+	string name;
+	while(temp != NULL){
+		if(temp->data.getDiemTong() > max){
+			max = temp->data.getDiemTong();
+			name = temp->data.getTenHocPhan();
+		}
+		temp = temp->pNext;
+	}
+	cout << "Hoc phan " << name <<  " co diem tong cao nhat la: " << max << endl;
+}
+void SingleList::findMinDiemTong(){
+	Node* temp = pHead;
+	float min;
+	string name;
+	while(temp != NULL){
+		if(temp->data.getDiemTong() < min){
+			min = temp->data.getDiemTong();
+			name = temp->data.getTenHocPhan();
+		}
+		temp = temp->pNext;
+	}
+	cout << "Hoc phan " << name <<  " co diem tong thap nhat: " << min << endl;
+}
+int SingleList::SoMonDat(){
+	Node* temp = pHead;
+	int count = 0;
+	while(temp != NULL){
+		if(temp->data.getDiemTong() >= 4){
+			count++;
+		}
+		temp = temp->pNext;
+	}
+	return count;
+}
+void SingleList::MonDat(){
+	Node* temp = pHead;
+	string name;
+	while(temp != NULL){
+		if(temp->data.getDiemTong() >= 4){
+			cout << temp->data.getTenHocPhan() << ": " << temp->data.getSoTinChi() << " tin chi" << endl;
+		}
+		temp = temp->pNext;
+	}
+}
+int SingleList::SoMonChuaDat(){
+	Node* temp = pHead;
+	int count = 0;
+	while(temp != NULL){
+		if(temp->data.getDiemTong() < 4){
+			count++;
+		}
+		temp = temp->pNext;
+	}
+	return count;
+}
+void SingleList::MonChuaDat(){
+	Node* temp = pHead;
+	string name;
+	while(temp != NULL){
+		if(temp->data.getDiemTong() < 4){
+			cout << temp->data.getTenHocPhan() << ": " << temp->data.getSoTinChi() << " tin chi" << endl;
+		}
+		temp = temp->pNext;
+	}
+}

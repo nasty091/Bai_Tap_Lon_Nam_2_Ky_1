@@ -24,4 +24,11 @@ class SingleList{
 		void SortByDiemThi();
 		void SortByTenHocPhan();
 		void Swap(TinChi& source1, TinChi& source2);
-}
+		void findMaxDiemTong();
+		void findMinDiemTong();
+		float DiemTrungBinh();
+		int SoMonDat();
+		void MonDat();
+		int SoMonChuaDat();
+		void MonChuaDat();
+};
