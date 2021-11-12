@@ -31,4 +31,10 @@ class SingleList{
 		void MonDat();
 		int SoMonChuaDat();
 		void MonChuaDat();
+		int SoTinChiTichLuy();
+	    void SearchByHocPhan();
+      	int List_Size();
+     	void ThemDau(TinChi& source);
+	    void ThemCuoi(TinChi& source);
+
 };

@@ -136,3 +136,55 @@ void SingleList::MonChuaDat(){
 		temp = temp->pNext;
 	}
 }
+int SingleList::SoTinChiTichLuy(){
+	Node* temp = pHead;
+	int sum = 0;
+	while(temp != NULL){
+		if(temp->data.getDiemTong() >= 4){
+			sum += temp->data.getSoTinChi();
+		}
+		temp = temp->pNext;
+	}
+	return sum;
+}
+void SingleList::SearchByHocPhan(){
+	Node* temp = pHead;
+	Node* temp2 = NULL;
+	string name;
+	cout << "Nhap hoc phan can tim kiem: ";
+	getline(cin,name);
+	while(temp != NULL){
+		if(name == temp->data.getHocPhan()){
+			cout << temp->data;
+			temp2 = temp;
+		}
+		temp = temp->pNext;
+	}
+	if(temp2 == NULL){
+		cout << "Khong tim thay hoc phan!" << endl;
+	}
+}
+int SingleList::List_Size(){
+	Node* temp = pHead;
+	int size = 0;
+	while(temp != NULL){
+		temp = temp->pNext;
+		size++;
+	}
+	return size;
+}
+void SingleList::ThemDau(TinChi& source){
+	Node* pNode = new Node(source);
+	if(pHead == NULL){
+		pHead = pNode;
+	}
+	else{
+		pNode->pNext = pHead;
+		pHead = pNode;
+	}
+}
+void SingleList::ThemCuoi(TinChi& source){
+	Node* pNode = new Node(source);
+	if(pHead == NULL){
+		pHead = pNode;
+	}
