@@ -151,10 +151,10 @@ void SingleList::SearchByHocPhan(){
 	Node* temp = pHead;
 	Node* temp2 = NULL;
 	string name;
-	cout << "Nhap hoc phan can tim kiem: ";
+	cout << "Nhap hoc phan hoac ten hoc phan can tim kiem: ";
 	getline(cin,name);
 	while(temp != NULL){
-		if(name == temp->data.getHocPhan()){
+		if(name == temp->data.getHocPhan() || name == temp->data.getTenHocPhan()){
 			cout << temp->data;
 			temp2 = temp;
 		}
