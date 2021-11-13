@@ -151,11 +151,23 @@ void SingleList::SearchByHocPhan(){
 	Node* temp = pHead;
 	Node* temp2 = NULL;
 	string name;
-	cout << "Nhap hoc phan hoac ten hoc phan can tim kiem: ";
+	cout << "Nhap hoc phan can tim kiem: ";
+	fflush(stdin);
 	getline(cin,name);
 	while(temp != NULL){
-		if(name == temp->data.getHocPhan() || name == temp->data.getTenHocPhan()){
-			cout << temp->data;
+		if(temp->data.getHocPhan() == name){
+			cout << "Hoc phan: " << temp->data.getHocPhan() << endl;
+			cout << "Ten hoc phan :" << temp->data.getTenHocPhan() << endl;
+			cout << "Diem qua trinh: " << temp->data.getDiemQuaTrinh() << endl;
+			cout << "Diem thi: " << temp->data.getDiemThi() << endl;
+			cout << "Diem Tong: " << temp->data.getDiemTong() << endl;
+			cout << "So tin chi: " << temp->data.getSoTinChi() << endl;
+			if(temp->data.getDiemTong() < 4){
+				cout << "Ghi chu: CHUA DAT" << endl;
+			}
+			else{
+				cout << "Ghi chu: DAT" << endl;
+			}
 			temp2 = temp;
 		}
 		temp = temp->pNext;
