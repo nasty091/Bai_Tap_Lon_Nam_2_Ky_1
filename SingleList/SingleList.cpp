@@ -225,7 +225,7 @@ void SingleList::XoaHocPhan(string name){
 	else{
 		Node* pPre = NULL;
 		while(pDel != NULL){
-			if(pDel->data.getTenHocPhan() == name){
+			if(pDel->data.getTenHocPhan() == name || pDel->data.getHocPhan() == name){
 				break;
 			}
 			pPre = pDel;
