@@ -40,6 +40,7 @@ class SingleList{
 		void XoaHocPhan(string name);
 };
 int main(){
+	SingleList a;
 	int x,t;
 	do{
 		system("cls");
