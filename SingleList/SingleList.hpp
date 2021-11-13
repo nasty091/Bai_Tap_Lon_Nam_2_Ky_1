@@ -32,10 +32,10 @@ class SingleList{
 		int SoMonChuaDat();
 		void MonChuaDat();
 		int SoTinChiTichLuy();
-	    void SearchByHocPhan();
-      	int List_Size();
-     	void ThemDau(TinChi& source);
-	    void ThemCuoi(TinChi& source);
+	    	void SearchByHocPhan();
+      		int List_Size();
+     		void ThemDau(TinChi& source);
+	   	void ThemCuoi(TinChi& source);
 		void ThemHocPhan(TinChi& source, int vitri);
 		void XoaHocPhan(string name);
 };
