@@ -187,4 +187,67 @@ void SingleList::ThemCuoi(TinChi& source){
 	Node* pNode = new Node(source);
 	if(pHead == NULL){
 		pHead = pNode;
+}
+void SingleList::ThemHocPhan(TinChi& source, int vitri){
+	if(vitri <= 0 || vitri > List_Size()){
+		cout << "Vi tri khong hop le!" << endl;
+		return;
 	}
+	if(vitri == 1){
+		ThemDau(source);
+	}
+//	else if(vitri == List_Size() - 1){
+//		ThemCuoi(source);
+//	}
+	else{
+		Node* pNode = new Node(source);
+		Node* pIns = pHead;
+		Node* pPre = NULL;
+		int i = 1;
+		while(pIns != NULL){
+			if(i == vitri){
+				break;
+			}
+			pPre = pIns;
+			pIns = pIns->pNext;
+			i++;
+		} 
+		pNode->pNext = pIns;
+		pPre->pNext = pNode;
+	}
+	traverse();
+}
+void SingleList::XoaHocPhan(string name){
+	Node* pDel = pHead;
+	if(pDel == NULL){
+		cout << "Danh sach rong!" << endl;
+	}
+	else{
+		Node* pPre = NULL;
+		while(pDel != NULL){
+			if(pDel->data.getTenHocPhan() == name){
+				break;
+			}
+			pPre = pDel;
+			pDel = pDel->pNext;
+		}
+		if(pDel == NULL){
+			cout << "Khong tim thay hoc phan!" << endl;
+		}
+		else{
+			if(pDel == pHead){
+				pHead = pHead->pNext;
+				pDel->pNext = NULL;
+				delete pDel;
+				pDel = NULL;
+			}
+			else{
+				pPre->pNext = pDel->pNext;
+				pDel->pNext = NULL;
+				delete pDel;
+				pDel = NULL;
+			}
+		}
+	}
+	traverse();
+}
