@@ -41,7 +41,6 @@ class SingleList{
 };
 int main(){
 	int x,t;
-	
 	do{
 		system("cls");
 		cout<<"==================================Chuong trinh quan ly Hoc Phan==============================";
