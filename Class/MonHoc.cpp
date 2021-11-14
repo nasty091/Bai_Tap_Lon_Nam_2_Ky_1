@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-// class MonHoc
+// Class MonHoc
 class MonHoc{
 	private:
 		string HocPhan,TenHocPhan;
@@ -14,6 +14,7 @@ class MonHoc{
 		void setTenHocPhan(string TenHocPhan);
 		string getTenHocPhan();
 		friend istream& operator >> (istream& is, MonHoc& hp);
+		void doc(ifstream&);
 };
 MonHoc::MonHoc(){
 	HocPhan = "";
@@ -39,9 +40,21 @@ string MonHoc::getTenHocPhan(){
 	return TenHocPhan;
 }
 istream& operator >> (istream& is, MonHoc& hp){
+	char a[40], b[40];
+	fflush(stdin);
 	cout << "Nhap hoc phan: ";
-	getline(is, hp.HocPhan);
+	is.getline(a, 40);
 	cout << "Nhap ten hoc phan: ";
-	getline(is, hp.TenHocPhan);
+	is.getline(b, 40);
+	hp.setHocPhan(a);
+	hp.setTenHocPhan(b);
 	return is;
+}
+void MonHoc::doc(ifstream& is){
+	char a[40], b[40];
+	fflush(stdin);
+	is.getline(a, 40);
+	is.getline(b, 40);
+	setHocPhan(a);
+	setTenHocPhan(b);
 }
