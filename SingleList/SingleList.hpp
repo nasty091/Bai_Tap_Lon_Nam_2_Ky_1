@@ -27,6 +27,7 @@ class SingleList{
 		void findMaxDiemTong();
 		void findMinDiemTong();
 		float DiemTrungBinh();
+		string XepLoai();
 		int SoMonDat();
 		void MonDat();
 		int SoMonChuaDat();
