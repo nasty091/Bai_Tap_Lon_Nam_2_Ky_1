@@ -12,6 +12,7 @@ class Diem : public MonHoc{
 		void setDiemTong(float DiemTong);
 		float getDiemTong();
 		friend istream& operator >> (istream& is, Diem& ds);
+		void doc(ifstream&);
 };
 Diem::Diem(){
 	DiemQuaTrinh = 0;
@@ -48,10 +49,27 @@ istream& operator >> (istream& is, Diem& ds){
 	MonHoc *a = static_cast <MonHoc *> (&ds);
 	is >> *a;
 	fflush(stdin);
+	float c, d, e;
 	cout << "Nhap diem qua trinh: ";
-	is >> ds.DiemQuaTrinh;
+	is >> c;
 	cout << "Nhap diem thi: ";
-	is >> ds.DiemThi;
-	ds.DiemTong = (float)(ds.DiemQuaTrinh + ds.DiemThi) / 2;
+	is >> d;
+	e = (float)(c + d) / 2;
+	ds.setDiemQuaTrinh(c);
+	ds.setDiemThi(d);
+	ds.setDiemTong(e);
 	return is;
+}
+void Diem::doc(ifstream& is){
+	MonHoc::doc(is);
+	fflush(stdin);
+	float c, d, e;
+	is >> c;
+	is >> d;
+	e = (float)(c + d) / 2;
+	char ss[5];
+	is.getline(ss, 3);
+	setDiemQuaTrinh(c);
+	setDiemThi(d);
+	setDiemTong(e);
 }
