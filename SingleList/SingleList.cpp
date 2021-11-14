@@ -94,6 +94,34 @@ void SingleList::findMinDiemTong(){
 	}
 	cout << "Hoc phan " << name <<  " co diem tong thap nhat: " << min << endl;
 }
+float SingleList::DiemTrungBinh(){
+	Node* temp = pHead;
+	float sum = 0;
+	float i = 0;
+	while(temp != NULL){
+		sum += temp->data.getDiemTong();
+		i++;
+		temp = temp->pNext;
+	}
+	float GPA = sum / i;
+	return GPA;
+}
+string SingleList::XepLoai(){
+	string xl = "";
+	if(DiemTrungBinh() > 8){
+		xl = "GIOI";
+	}
+	else if(DiemTrungBinh() > 5 && DiemTrungBinh() < 8){
+		xl = "KHA";
+	}
+	else if(DiemTrungBinh() <= 5 && DiemTrungBinh() >= 3){
+		xl = "TRUNG BINH";
+	}
+	else{
+		xl = "YEU KEM";
+	}
+	return xl;
+}
 int SingleList::SoMonDat(){
 	Node* temp = pHead;
 	int count = 0;
